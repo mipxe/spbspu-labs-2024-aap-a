@@ -5,7 +5,7 @@
 
 namespace mozhegova
 {
-  class Rectangle : Shape
+  class Rectangle : public Shape
   {
   public:
     Rectangle(point_t lowLef, point_t uppRig);
