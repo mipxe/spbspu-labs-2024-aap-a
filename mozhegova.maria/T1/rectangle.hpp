@@ -8,6 +8,7 @@ namespace mozhegova
   class Rectangle : Shape
   {
   public:
+    Rectangle(point_t lowLef, point_t uppRig);
     double getArea() const override;
     rectangle_t getFrameRect() const override;
     void move(point_t p) override;
@@ -16,8 +17,6 @@ namespace mozhegova
   private:
     point_t lowerLeft;
     point_t upperRight;
-    double width = upperRight.x - lowerLeft.x;
-    double height = upperRight.y - lowerLeft.y;
   };
 }
 

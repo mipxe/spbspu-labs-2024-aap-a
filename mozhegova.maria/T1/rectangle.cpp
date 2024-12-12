@@ -1,12 +1,21 @@
 #include "rectangle.hpp"
 
+mozhegova::Rectangle::Rectangle(point_t lowLef, point_t uppRig) :
+  lowerLeft(lowLef),
+  upperRight(uppRig)
+{}
+
 double mozhegova::Rectangle::getArea() const
 {
+  double width = upperRight.x - lowerLeft.x;
+  double height = upperRight.y - lowerLeft.y;
   return width * height;
 }
 
 mozhegova::rectangle_t mozhegova::Rectangle::getFrameRect() const
 {
+  double width = upperRight.x - lowerLeft.x;
+  double height = upperRight.y - lowerLeft.y;
   double x_ = lowerLeft.x + width / 2;
   double y_ = lowerLeft.y + height / 2;
   return {width, height, {x_, y_}};
