@@ -10,8 +10,8 @@ int main()
   mozhegova::Shape * shapes[1000] = {};
   size_t count = 0;
   bool flag = false;
-  double scaleCoef = 0;
-  mozhegova::point_t scaleCenter = {0, 0};
+  double scaleCoef = 0.0;
+  mozhegova::point_t scaleCenter = {0.0, 0.0};
   while (!std::cin.eof()) 
   {
     try
@@ -85,6 +85,7 @@ int main()
     mozhegova::destroy(shapes, count);
     return 1;
   }
+  std::cout << std::fixed;
   std::cout.precision(1);
   std::cout << mozhegova::sumArea(shapes, count);
   mozhegova::printCoorRect(shapes, count);

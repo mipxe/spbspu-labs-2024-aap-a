@@ -28,11 +28,10 @@ void mozhegova::printCoorRect(Shape ** shapes, size_t n)
   for (size_t i = 0; i < n; i++)
   {
     rectangle_t rect = shapes[i]->getFrameRect();
-    double lx = rect.pos.x - rect.width / 2;
-    double ly = rect.pos.y - rect.height / 2;
-    double rx = rect.pos.x + rect.width / 2;
-    double ry = rect.pos.y + rect.height / 2;
-    std::cout.precision(1);
+    double lx = rect.pos.x - rect.width / 2.0;
+    double ly = rect.pos.y - rect.height / 2.0;
+    double rx = rect.pos.x + rect.width / 2.0;
+    double ry = rect.pos.y + rect.height / 2.0;
     std::cout << " " << lx << " " << ly << " " << rx << " " << ry << "\n";
   }
 }

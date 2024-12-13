@@ -16,8 +16,8 @@ mozhegova::rectangle_t mozhegova::Rectangle::getFrameRect() const
 {
   double width = upperRight.x - lowerLeft.x;
   double height = upperRight.y - lowerLeft.y;
-  double x_ = lowerLeft.x + width / 2;
-  double y_ = lowerLeft.y + height / 2;
+  double x_ = lowerLeft.x + (width / 2.0);
+  double y_ = lowerLeft.y + (height / 2.0);
   return {width, height, {x_, y_}};
 }
 
@@ -27,13 +27,13 @@ void mozhegova::Rectangle::move(point_t p)
   double dx = p.x - center.x;
   double dy = p.y - center.y;
   lowerLeft = {lowerLeft.x + dx, lowerLeft.y + dy};
-  upperRight = {upperRight.x + dx, lowerLeft.y + dy};
+  upperRight = {upperRight.x + dx, upperRight.y + dy};
 }
 
 void mozhegova::Rectangle::move(double dx, double dy)
 {
   lowerLeft = {lowerLeft.x + dx, lowerLeft.y + dy};
-  upperRight = {upperRight.x + dx, lowerLeft.y + dy};
+  upperRight = {upperRight.x + dx, upperRight.y + dy};
 }
 
 void mozhegova::Rectangle::scale(double k)
