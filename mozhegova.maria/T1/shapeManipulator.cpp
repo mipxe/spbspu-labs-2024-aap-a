@@ -1,16 +1,9 @@
 #include "shapeManipulator.hpp"
 #include <cstring>
 
-void mozhegova::getNum(char * tok, size_t length, double * num)
+double * mozhegova::getNum(char * tok, size_t length)
 {
-  try
-  {
-    num = new double [length];
-  }
-  catch (const std::exception& e)
-  {
-    throw;
-  }
+  double * num = new double [length];
   for (size_t i = 0; tok != NULL; i++)
   {
     tok = std::strtok(NULL, " ");
@@ -19,6 +12,7 @@ void mozhegova::getNum(char * tok, size_t length, double * num)
       num[i] = std::atof(tok);
     }
   }
+  return num;
 }
 double mozhegova::sumArea(Shape ** shapes, size_t n)
 {

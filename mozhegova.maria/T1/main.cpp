@@ -6,6 +6,7 @@
 
 int main()
 {
+  char * str = nullptr;
   mozhegova::Shape * shapes[1000] = {};
   size_t count = 0;
   bool flag = false;
@@ -13,7 +14,6 @@ int main()
   mozhegova::point_t scaleCenter = {0, 0};
   while (!std::cin.eof()) 
   {
-    char * str = nullptr;
     try
     {
       str = mozhegova::inputString(std::cin, '\n');
@@ -38,7 +38,7 @@ int main()
     {
       try
       {
-        mozhegova::getNum(tok, 4, num);
+        num = mozhegova::getNum(tok, 4);
       }
       catch (const std::exception& e)
       {
@@ -52,15 +52,17 @@ int main()
       if (lowLef.x >= uppRig.x || lowLef.y >= uppRig.y)
       {
         flag = true;
+        continue;
       }
       mozhegova::Rectangle * rect = new mozhegova::Rectangle(lowLef, uppRig);
       shapes[count++] = rect;
+      delete[] num;
     }
     else if (isScale)
     {
       try
       {
-        mozhegova::getNum(tok, 3, num);
+        num = mozhegova::getNum(tok, 3);
       }
       catch (const std::exception& e)
       {
@@ -72,6 +74,7 @@ int main()
       scaleCenter = {num[0], num[1]};
       scaleCoef = num[2];
       delete[] str;
+      delete[] num;
       break;
     }
     delete[] str;
