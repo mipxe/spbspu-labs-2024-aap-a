@@ -52,6 +52,8 @@ int main()
       if (lowLef.x >= uppRig.x || lowLef.y >= uppRig.y)
       {
         flag = true;
+        delete[] str;
+        delete[] num;
         continue;
       }
       mozhegova::Rectangle * rect = new mozhegova::Rectangle(lowLef, uppRig);
@@ -83,6 +85,11 @@ int main()
   {
     std::cerr << "Incorrect scale\n";
     mozhegova::destroy(shapes, count);
+    return 1;
+  }
+  if (count == 0)
+  {
+    std::cerr << "There are no shapes\n";
     return 1;
   }
   std::cout << std::fixed;

@@ -32,8 +32,9 @@ void mozhegova::printCoorRect(Shape ** shapes, size_t n)
     double ly = rect.pos.y - rect.height / 2.0;
     double rx = rect.pos.x + rect.width / 2.0;
     double ry = rect.pos.y + rect.height / 2.0;
-    std::cout << " " << lx << " " << ly << " " << rx << " " << ry << "\n";
+    std::cout << " " << lx << " " << ly << " " << rx << " " << ry;
   }
+  std::cout << "\n";
 }
 void mozhegova::scaleShapes(Shape ** shapes, size_t n, point_t p, double k)
 {
