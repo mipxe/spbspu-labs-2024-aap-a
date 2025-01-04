@@ -14,7 +14,12 @@ mozhegova::Rectangle * mozhegova::makeRectangle(std::istream& in)
   {
     throw std::invalid_argument("Incorrect coordinates");
   }
-  mozhegova::Rectangle * rect = new mozhegova::Rectangle(lowLef, uppRig);
+  point_t numPoint[4] = {};
+  numPoint[0] = lowLef;
+  numPoint[1] = {p3, p2};
+  numPoint[2] = uppRig;
+  numPoint[3] = {p1, p4};
+  mozhegova::Rectangle * rect = new mozhegova::Rectangle(4, numPoint);
   return rect;
 }
 
