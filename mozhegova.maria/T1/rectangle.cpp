@@ -6,6 +6,11 @@ mozhegova::Rectangle::Rectangle(size_t n, point_t * arr) :
   poly = new mozhegova::Polygon(n, arr);
 }
 
+mozhegova::Rectangle::~Rectangle()
+{
+  delete poly;
+}
+
 double mozhegova::Rectangle::getArea() const
 {
   return poly->getArea();

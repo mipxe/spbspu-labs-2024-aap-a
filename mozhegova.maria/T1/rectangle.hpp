@@ -15,6 +15,7 @@ namespace mozhegova
     void move(point_t p) override;
     void move(double dx, double dy) override;
     void scale(double k) override;
+    ~Rectangle();
   private:
     Polygon * poly;
   };

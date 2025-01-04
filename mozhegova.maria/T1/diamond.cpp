@@ -8,6 +8,11 @@ mozhegova::Diamond::Diamond(size_t n, point_t * arr) :
   poly = new mozhegova::Polygon(n, arr);
 }
 
+mozhegova::Diamond::~Diamond()
+{
+  delete poly;
+}
+
 double mozhegova::Diamond::getArea() const
 {
   return poly->getArea();
