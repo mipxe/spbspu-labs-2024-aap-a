@@ -74,7 +74,12 @@ mozhegova::Diamond* mozhegova::makeDiamond(std::istream& in)
   {
     throw std::invalid_argument("Incorrect coordinates");
   }
-  Diamond * diam = new Diamond(pCent, pVert, pHori);
+  point_t numPoint[4] = {};
+  numPoint[0] = {pCent.x, pCent.y - pVert.y};
+  numPoint[1] = pHori;
+  numPoint[2] = pVert;
+  numPoint[3] = {pCent.x - pHori.x, pCent.y};
+  Diamond * diam = new Diamond(4, numPoint);
   return diam;
 }
 
